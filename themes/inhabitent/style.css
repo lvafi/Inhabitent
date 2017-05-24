@@ -406,14 +406,6 @@ textarea {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-.site-header {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
-  -ms-flex-align: center;
-      align-items: center; }
-
 /* Links */
 a {
   color: royalblue; }
@@ -427,6 +419,24 @@ a {
     outline: 0; }
 
 /* Menus */
+.site-header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  -ms-flex-align: center;
+      align-items: center;
+  border-bottom: 1px solid #e1e1e1; }
+
+.container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  background-color: red; }
+
 .main-navigation {
   display: -ms-flexbox;
   display: flex;
@@ -612,6 +622,12 @@ a {
 
 .bypostauthor {
   display: block; }
+
+.container {
+  width: 1152px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 1rem; }
 
 /*--------------------------------------------------------------
 # Media

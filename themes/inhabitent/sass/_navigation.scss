@@ -1,11 +1,7 @@
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
-.site-header {
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-	}
+
 
 
 /* Links */
@@ -31,11 +27,22 @@ a {
 }
 
 /* Menus */
+.site-header {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		border-bottom: $base_solid_border;
+	}
+.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: red;
+}
 
 .main-navigation {
-	
-	display: flex;
-	    z-index: 999;
+	  display: flex;
+	  z-index: 999;
     position: fixed;
     width: 100%;
     display: flex;

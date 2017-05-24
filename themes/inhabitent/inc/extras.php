@@ -67,33 +67,17 @@ function my_styles_method() {
 }
 add_action( 'wp_enqueue_scripts', 'my_styles_method' );
 
-/*
-  Changing the number of posts per page
- 
-function textdomain_set_post_per_page( $query ) {
-    if ( is_post_type_archive( 'product' ) && !is_admin() && $query->is_main_query() ) {
-        $query->set('posts_per_page', 16);
-				$query->set('orderby', 'title');
-				$query->set('order', 'ASC');
-    }
-		else if ( is_post_type_archive( 'product_type' ) && !is_admin() && $query->is_main_query() ) {
-        $query->set('posts_per_page', 4);
-				$query->set('orderby', 'title');
-				$query->set('order', 'ASC');
-    }
-}
-add_action( 'pre_get_posts', 'textdomain_set_post_per_page', 1 );*/
+/**
+ * Changing the number of posts per page
+ */
+   $args = array('posts_per_page' => 3,); 
+   $posts = new WP_Query( $args );  ?>
 
-
-/*
-$arg = array('posts_per_page' => 3,
-); ?>
-<?php $posts = new WP_Query( $args );  ?>
 <?php if ( $posts->have_posts() ) : ?>
-   <?php while ( $products->have_posts() ) : $posts->the_post(); ?>
+   <?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
 	  <ul class="home-posts">
-			<li><?php the_post_thumnail(); ?> </li>
-			<li><?php the time('F jS, Y'); ?> <?php comments_popup_link('0 comments >>', '% Comments>>'); ?></li> 
+			<li><?php the_post_thumbnail(); ?> </li>
+			<li><?php the_time('F jS, Y'); ?> <?php comments_popup_link('0 comments >>', '% Comments>>'); ?></li> 
       <h1><?php the_title(); ?></h1>
       <?php the_content(); ?>
    <?php endwhile; ?>
@@ -102,4 +86,4 @@ $arg = array('posts_per_page' => 3,
 <?php else : ?>
       <h2>Nothing found!</h2>
 <?php endif; ?>
-*/
+	
