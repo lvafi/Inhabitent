@@ -9,6 +9,8 @@
 plugins/*
 !plugins/inhabitent-functionality/
 !plugins/business-hours-widget/
+!plugins/custom-field-suite/
+!plugins/contact-form-7/
 # Ignore everything in "themes" except the active theme. #
 themes/*
 !themes/inhabitent/
