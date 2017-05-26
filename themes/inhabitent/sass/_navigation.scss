@@ -7,11 +7,9 @@
 /* Links */
 
 a {
-	color: $color__link;
+	color: $color_green;
+  text-decoration: none;
 
-	&:visited {
-		color: $color__link-visited;
-	}
 	&:hover,
 	&:focus,
 	&:active {
@@ -28,17 +26,48 @@ a {
 
 /* Menus */
 .site-header {
-		display: flex;
-		justify-content: flex-end;
-		align-items: center;
+	  height: 50px;
+  	width: 100%;
+	  position: fixed;
 		border-bottom: $base_solid_border;
-	}
-.container {
+		z-index: 1;
+   .container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background-color: red;
+	} 
+
+	.site-branding {
+		height: 33px;
+		width: 50px;
+		background-image: url('../../images/logos/inhabitent-logo-tent.svg');
+		background-size: cover;
+		a{
+			display: block;
+			height: 33px;
+			width: 50px;
+		}
+	}
+
+	.reverse-nav {
+	background-color: transparent;
+	position: absolute;
+	border: 0;
+		a {
+			color: white;
+			text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+			&:hover{
+				color: $color_yellow;
+			}
+		}
+	}
 }
+		
+	
+
+
+
+
 
 .main-navigation {
 	  display: flex;
@@ -49,39 +78,29 @@ a {
     justify-content: flex-end;
 		top: 0;
 		right: 10px;
-		
-
-
-	ul {
-		display: none;
-		list-style: none;
-		margin: 0;
-		padding-left: 0;
-		a {
-			color:#f0e4d1;
-			text-transform: uppercase;
-		}
 		ul {
+			display: none;
+			list-style: none;
+			margin: 0;
+			padding-left: 0;
+			ul {
 			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 			float: left;
 			position: absolute;
 			top: $base__space-unit;
 			left: -999rem;
 			z-index: 99999;
-
-			ul {
+      ul {
 				left: -999rem;
 				top: 0;
 			}
-
-			li {
+      li {
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
 				}
 			}
-
-			a {
+      a {
 				width: 200px;
 			}
 
@@ -102,7 +121,7 @@ a {
 	li {
 		float: left;
 		position: relative;
-		margin: 0 10px;
+		margin-right: 1.2rem;
 
 		&:hover > a,
 		&.focus > a {
@@ -117,7 +136,7 @@ a {
 	.current-menu-item > a,
 	.current_page_ancestor > a {
 	}
-}
+} 
 
 /* Small menu. */
 .menu-toggle,
@@ -153,8 +172,4 @@ a {
 		text-align: right;
 		width: 50%;
 	}
-}
-
-.site-branding {
-	display: none;
 }

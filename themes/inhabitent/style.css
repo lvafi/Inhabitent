@@ -408,11 +408,10 @@ textarea {
 --------------------------------------------------------------*/
 /* Links */
 a {
-  color: royalblue; }
-  a:visited {
-    color: purple; }
+  color: #248A83;
+  text-decoration: none; }
   a:hover, a:focus, a:active {
-    color: midnightblue; }
+    color: #d99054; }
   a:focus {
     outline: thin dotted; }
   a:hover, a:active {
@@ -420,22 +419,36 @@ a {
 
 /* Menus */
 .site-header {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
-  -ms-flex-align: center;
-      align-items: center;
-  border-bottom: 1px solid #e1e1e1; }
-
-.container {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  -ms-flex-align: center;
-      align-items: center;
-  background-color: red; }
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  border-bottom: 1px solid #e1e1e1;
+  z-index: 1; }
+  .site-header .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center; }
+  .site-header .site-branding {
+    height: 33px;
+    width: 50px;
+    background-image: url("../../images/logos/inhabitent-logo-tent.svg");
+    background-size: cover; }
+    .site-header .site-branding a {
+      display: block;
+      height: 33px;
+      width: 50px; }
+  .site-header .reverse-nav {
+    background-color: transparent;
+    position: absolute;
+    border: 0; }
+    .site-header .reverse-nav a {
+      color: white;
+      text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5); }
+      .site-header .reverse-nav a:hover {
+        color: #f0e4d1; }
 
 .main-navigation {
   display: -ms-flexbox;
@@ -453,9 +466,6 @@ a {
     list-style: none;
     margin: 0;
     padding-left: 0; }
-    .main-navigation ul a {
-      color: #f0e4d1;
-      text-transform: uppercase; }
     .main-navigation ul ul {
       box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
       float: left;
@@ -477,7 +487,7 @@ a {
   .main-navigation li {
     float: left;
     position: relative;
-    margin: 0 10px; }
+    margin-right: 1.2rem; }
   .main-navigation a {
     display: block;
     text-decoration: none; }
@@ -511,9 +521,6 @@ a {
   float: right;
   text-align: right;
   width: 50%; }
-
-.site-branding {
-  display: none; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -623,12 +630,6 @@ a {
 .bypostauthor {
   display: block; }
 
-.container {
-  width: 1152px;
-  margin: 0 auto;
-  height: 100%;
-  padding: 0 1rem; }
-
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -714,6 +715,17 @@ object {
   .hero h2 {
     font-size: 0;
     margin: 0; }
+
+h2 {
+  text-align: center;
+  font-weight: lighter;
+  margin-bottom: 3.5rem;
+  letter-spacing: 2px; }
+
+.image-container {
+  height: 75px;
+  width: 75px;
+  display: block; }
 
 #secondary {
   width: 27%;

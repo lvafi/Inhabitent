@@ -21,31 +21,32 @@ function red_starter_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'red_starter_body_classes' );
 
-function inhabitent_login_logo(){
- echo '<style type="text/css">;
-   body.login div#login h1 a {
-		 background-image: url(' . get_template_directory_uri() . '/images/logos/inhabitent-logo-text-dark.svg);
-		 background-size: 300px 53px;
-		 width: 300px;
-		 height: 53px;
-	  }
-		#login .button.button-primary {
-			background-color: #248A83;}
-}
-</style>';
-}
-add_action('login_head','inhabitent_login_logo');
 
-function inhabitent_login_logo_url($url) {
-	return home_url();
+function inhabitent_login_log(){
+    echo '<style type="text/css">
+
+    #login h1 a {
+        background: url('. get_stylesheet_directory_uri(). '/images/logos/inhabitent-logo-text-dark.svg) no-repeat !important;
+        background-size: 300px 53px !important; 
+        width: 300px !important; 
+        height: 53px !important;
+        }
+        #login .button.button-primary {
+            background-color: #248A83 ;
+            }
+    </style>';
 }
-add_filter('login_headerurl','inhabitent_login_logo_url');
+add_action( 'login_head','inhabitent_login_log' );
+
+function inhabitent_login_log_url( $url ) {
+ return home_url();
+}
+add_filter( 'login_headerurl', 'inhabitent_login_log_url' );
 
 
-function inhabitent_login_title() {
-	return 'Inhabitent';
-}
-add_filter('login_headertitle', 'inhabitent_login_title');
+
+
+
 
 
 /**
@@ -67,23 +68,53 @@ function my_styles_method() {
 }
 add_action( 'wp_enqueue_scripts', 'my_styles_method' );
 
+
 /**
  * Changing the number of posts per page
  */
-   $args = array('posts_per_page' => 3,); 
-   $posts = new WP_Query( $args );  ?>
+function textdomain_set_post_per_page( $query ) {
+    //Display 16 posts for a custom post type called 'movie'
+    if ( is_post_type_archive( 'product' ) && !is_admin() && $query->is_main_query() ) {
+        $query->set('posts_per_page', 16);
+				$query->set('orderby', 'title');
+				$query->set('order', 'ASC');
+    }
+		else if ( is_post_type_archive( 'product_type' ) && !is_admin() && $query->is_main_query() ) {
+        $query->set('posts_per_page', 4);
+				$query->set('orderby', 'title');
+				$query->set('order', 'ASC');
+    }
+}
+add_action( 'pre_get_posts', 'textdomain_set_post_per_page', 1 );
 
-<?php if ( $posts->have_posts() ) : ?>
-   <?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
-	  <ul class="home-posts">
-			<li><?php the_post_thumbnail(); ?> </li>
-			<li><?php the_time('F jS, Y'); ?> <?php comments_popup_link('0 comments >>', '% Comments>>'); ?></li> 
-      <h1><?php the_title(); ?></h1>
-      <?php the_content(); ?>
-   <?php endwhile; ?>
-   <?php the_posts_navigation(); ?>
-   <?php wp_reset_postdata(); ?>
-<?php else : ?>
-      <h2>Nothing found!</h2>
-<?php endif; ?>
+
+/**
+ * Changes title to just title. Nothing like Category:.
+ */
+function product_type_archive_title( $title ) {
+    if ( is_category() ) {
+        $title = single_cat_title( '', false );
+    } elseif ( is_tag() ) {
+        $title = single_tag_title( '', false );
+    } elseif ( is_post_type_archive() ) {
+        $title = post_type_archive_title( '', false );
+    } elseif ( is_tax() ) {
+        $title = single_term_title( '', false );
+    }
+
+    return $title;
+}
+
+add_filter( 'get_the_archive_title', 'product_type_archive_title' );
+/**
+ * Changes title to just title 'product'.
+ */
+function inhabitent_product_archive_title( $title ) {
+    if ( is_post_type_archive('product') ) {
+        $title = 'Shop Stuff';
+    } 
+    return $title;
+}
+
+add_filter( 'get_the_archive_title', 'inhabitent_product_archive_title' );
 	
