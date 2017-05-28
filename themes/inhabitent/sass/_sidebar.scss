@@ -1,7 +1,10 @@
-#secondary {
+.widget-area {
   width: 27%;
   padding-top: 65px;
   padding-left: 50px;
   border-left: $base_solid_border;
 }
 
+.site-content{
+  display:flex;
+}

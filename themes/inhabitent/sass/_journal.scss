@@ -1,0 +1,46 @@
+/*--------------------------------------------------------------
+# Journal
+--------------------------------------------------------------*/
+
+.blog, .date {
+    article {
+    margin-bottom: 4.5rem;
+  }
+}
+
+.blog, .single-post, .category, .date {
+  .entry-header {
+    font-family: $font_accent;
+    text-transform: uppercase;
+    line-height: 0;
+    position: relative;
+    color: white;
+  img {
+    width: 100%;
+    height: auto;
+  }
+  h1, h2 {
+    color: white;
+    padding: .5rem 1.5rem;
+    line-height: 1.5;
+    position: absolute;
+    top: 35px;
+    width: 570px;
+    background-color: $color_green;
+  }
+  a {
+    color: white;
+    &:hover {
+      color: $color_yellow;
+    }
+  }
+  .entry-meta {
+    line-height: 1.5;
+    padding: .3rem .5rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: $color_green;
+  }
+ }
+}

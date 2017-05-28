@@ -408,8 +408,9 @@ textarea {
 --------------------------------------------------------------*/
 /* Links */
 a {
-  color: #248A83;
-  text-decoration: none; }
+  color: #404040; }
+  a:visited {
+    color: #404040; }
   a:hover, a:focus, a:active {
     color: #d99054; }
   a:focus {
@@ -419,10 +420,11 @@ a {
 
 /* Menus */
 .site-header {
+  font-family: "novacento", "arial", "sans-serif";
+  text-transform: uppercase;
   height: 50px;
   width: 100%;
-  position: fixed;
-  border-bottom: 1px solid #e1e1e1;
+  position: absolute;
   z-index: 1; }
   .site-header .container {
     display: -ms-flexbox;
@@ -440,27 +442,24 @@ a {
       display: block;
       height: 33px;
       width: 50px; }
-  .site-header .reverse-nav {
-    background-color: transparent;
-    position: absolute;
-    border: 0; }
-    .site-header .reverse-nav a {
-      color: white;
-      text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5); }
-      .site-header .reverse-nav a:hover {
-        color: #f0e4d1; }
+
+.reverse-nav {
+  background-color: transparent;
+  position: absolute;
+  border: 0; }
+  .reverse-nav a {
+    color: white;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5); }
+    .reverse-nav a:hover {
+      color: #f0e4d1; }
+  .reverse-nav .site-branding {
+    background-image: url("../../images/inhabitent-logo-tent-white.svg"); }
+  .reverse-nav input[type=search] {
+    color: white; }
 
 .main-navigation {
   display: -ms-flexbox;
-  display: flex;
-  z-index: 999;
-  position: fixed;
-  width: 100%;
-  display: flex;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
-  top: 0;
-  right: 10px; }
+  display: flex; }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -485,12 +484,34 @@ a {
     .main-navigation ul li.focus > ul {
       left: auto; }
   .main-navigation li {
-    float: left;
-    position: relative;
+    display: inline-block;
     margin-right: 1.2rem; }
   .main-navigation a {
     display: block;
-    text-decoration: none; }
+    text-decoration: none;
+    color: green; }
+  .main-navigation fieldset {
+    border: 0;
+    padding: 0;
+    margin: 0; }
+  .main-navigation .show-search {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1rem; }
+  .main-navigation input[type=search] {
+    font: 1rem "novacento", "arial", "sans-serif";
+    background-color: transparent;
+    text-transform: uppercase;
+    border: 0;
+    padding-left: 1rem;
+    margin: 0;
+    width: 200px;
+    display: none; }
+    .main-navigation input[type=search]:focus {
+      outline: 0; }
 
 /* Small menu. */
 .menu-toggle,
@@ -630,6 +651,82 @@ a {
 .bypostauthor {
   display: block; }
 
+/* Page Styles */
+.blog #content,
+.single-post #content,
+.category #content,
+.page-id-32 #content,
+.date #content,
+.error404 #content {
+  display: -ms-flexbox;
+  display: flex;
+  width: 1120px;
+  margin: 0 auto;
+  height: 100%; }
+  .blog #content #primary,
+  .single-post #content #primary,
+  .category #content #primary,
+  .page-id-32 #content #primary,
+  .date #content #primary,
+  .error404 #content #primary {
+    width: 74%;
+    padding-right: 60px; }
+
+#content {
+  padding-bottom: 3rem; }
+
+body:not(.home):not(.page-template-page-about):not(.single-adventure) #content {
+  padding-top: 50px; }
+  body:not(.home):not(.page-template-page-about):not(.single-adventure) #content #primary {
+    padding-top: 50px; }
+
+.container {
+  width: 1120px;
+  margin: 0 auto;
+  height: 100%; }
+
+section {
+  width: 100%; }
+
+section:not(.hero):not(.about-hero) {
+  padding-top: 4.5rem; }
+
+.content-area {
+  width: 100%; }
+
+/* Custom Archives Styles*/
+.post-type-archive-adventure .page-header, .post-type-archive-product .page-header, .tax-product_type .page-header {
+  text-align: center; }
+  .post-type-archive-adventure .page-header h1, .post-type-archive-product .page-header h1, .tax-product_type .page-header h1 {
+    margin-bottom: 1.8rem; }
+  .post-type-archive-adventure .page-header ul, .post-type-archive-product .page-header ul, .tax-product_type .page-header ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+        justify-content: center; }
+    .post-type-archive-adventure .page-header ul a, .post-type-archive-product .page-header ul a, .tax-product_type .page-header ul a {
+      text-decoration: none;
+      color: #248A83; }
+  .post-type-archive-adventure .page-header li, .post-type-archive-product .page-header li, .tax-product_type .page-header li {
+    margin: 0 1.7rem;
+    list-style: none; }
+
+.post-type-archive-adventure .page-header, .post-type-archive-product .page-header {
+  border-bottom: 1px dashed #c8c8c8;
+  margin-bottom: 3rem; }
+
+/* Customized Links */
+.green-link {
+  margin-bottom: 0; }
+  .green-link a {
+    color: #fff;
+    font-family: "novacento", "arial", "sans-serif";
+    text-transform: uppercase;
+    background-color: #248A83;
+    padding: .75rem 1.75rem; }
+    .green-link a:hover {
+      background-color: #404040; }
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -694,11 +791,19 @@ object {
 # Page Templates
 --------------------------------------------------------------*/
 /* Front page */
+/* Front page */
 .home h2 {
   text-align: center;
   font-weight: lighter;
   margin-bottom: 3.5rem;
   letter-spacing: 2px; }
+
+.home .site-branding {
+  background-image: url(../../images/logos/inhabitent-logo-tent-white.svg);
+  border-bottom: 1px solid #e1e1e1; }
+
+.home .main-navigation a {
+  color: white; }
 
 .hero {
   width: 100%;
@@ -727,11 +832,45 @@ h2 {
   width: 75px;
   display: block; }
 
-#secondary {
+/* Shop Stuff */
+.product-info ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+.product-info li {
+  border: 1px solid #e1e1e1;
+  border-top-width: 5px;
+  text-align: center;
+  padding: 1rem .5rem;
+  width: 260px; }
+  .product-info li:hover {
+    border-color: #d99054; }
+
+.product-info img {
+  width: 70px;
+  margin-bottom: 1rem; }
+
+.product-info p {
+  text-align: center;
+  text-decoration: none; }
+
+.product-info a {
+  text-decoration: none; }
+
+.widget-area {
   width: 27%;
   padding-top: 65px;
   padding-left: 50px;
   border-left: 1px solid #e1e1e1; }
+
+.site-content {
+  display: -ms-flexbox;
+  display: flex; }
 
 .about-hero {
   height: 100vh;
@@ -751,3 +890,109 @@ h2 {
   width: 800px; }
   .about-wrap h2 {
     text-align: center; }
+
+/*--------------------------------------------------------------
+# Journal
+--------------------------------------------------------------*/
+.blog article, .date article {
+  margin-bottom: 4.5rem; }
+
+.blog .entry-header, .single-post .entry-header, .category .entry-header, .date .entry-header {
+  font-family: "novacento", "arial", "sans-serif";
+  text-transform: uppercase;
+  line-height: 0;
+  position: relative;
+  color: white; }
+  .blog .entry-header img, .single-post .entry-header img, .category .entry-header img, .date .entry-header img {
+    width: 100%;
+    height: auto; }
+  .blog .entry-header h1, .blog .entry-header h2, .single-post .entry-header h1, .single-post .entry-header h2, .category .entry-header h1, .category .entry-header h2, .date .entry-header h1, .date .entry-header h2 {
+    color: white;
+    padding: .5rem 1.5rem;
+    line-height: 1.5;
+    position: absolute;
+    top: 35px;
+    width: 570px;
+    background-color: #248A83; }
+  .blog .entry-header a, .single-post .entry-header a, .category .entry-header a, .date .entry-header a {
+    color: white; }
+    .blog .entry-header a:hover, .single-post .entry-header a:hover, .category .entry-header a:hover, .date .entry-header a:hover {
+      color: #f0e4d1; }
+  .blog .entry-header .entry-meta, .single-post .entry-header .entry-meta, .category .entry-header .entry-meta, .date .entry-header .entry-meta {
+    line-height: 1.5;
+    padding: .3rem .5rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background-color: #248A83; }
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.site-footer {
+  width: 100%;
+  height: 355px;
+  background: url("../../images/dark-wood.png") repeat;
+  padding-top: 4rem;
+  color: white;
+  line-height: 1.4; }
+  .site-footer .container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .site-footer .container .contact, .site-footer .container .business {
+      width: 25%; }
+    .site-footer .container .footer-logo {
+      height: 50px;
+      width: 50%;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+    .site-footer .container .site-info {
+      text-align: center;
+      width: 100%;
+      font-family: "novacento", "arial", "sans-serif";
+      text-transform: uppercase;
+      margin-bottom: 0; }
+  .site-footer h3 {
+    color: #d99054;
+    margin-bottom: 1.5rem; }
+  .site-footer p span {
+    font-weight: bold; }
+  .site-footer i {
+    margin: 0 .4rem;
+    width: 1rem; }
+    .site-footer i:first-child {
+      margin-left: 0; }
+  .site-footer a {
+    color: white; }
+    .site-footer a:hover {
+      text-decoration: underline; }
+
+/*--------------------------------------------------------------
+# Single Product Page
+--------------------------------------------------------------*/
+.single-product .one-product {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+
+.single-product .product-img {
+  width: 540px; }
+  .single-product .product-img img {
+    width: 100%;
+    height: auto; }
+
+.single-product .product-desc {
+  width: 540px; }
+  .single-product .product-desc h1 {
+    margin-bottom: .7rem; }
+  .single-product .product-desc h2 {
+    font-size: 1.8rem;
+    letter-spacing: .5px;
+    font-weight: normal; }

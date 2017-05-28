@@ -10,26 +10,30 @@ get_header(); ?>
 <div id="primary" class="content-area">
   <section class="hero">
     <h2>Inhabitent Camping Supply Company</h2>
+    <img src="<?php echo get_template_directory_uri() . '/images/logos/inhabitent-logo-full.svg'; ?>" alt="Inhabitent Logo" />
   </section>
 
 
     
 <!--The Shop Section-->     
-<h2>Shop Stuff</h2>
+
 <section class="product-info container">
+  <h2>Shop Stuff</h2>
+  <ul>
     <?php 
       $product_types = get_terms( 'product-type' ); 
       if ( !empty($product_types) && !is_wp_error($product_types)) : ?>
           <?php foreach ( $product_types as $product_type ) : ?>
-            <div class="single-product-type">
+            <li>
               <img src="<?php echo get_template_directory_uri() . '/images/product-type-icons/' . $product_type->slug; ?>.svg">
-              <span class="description"><?php echo $product_type->description;?> Stuff</h3></span>
-              <a href="<?php echo get_term_link($product_type);?>">
-                <h3><?php echo $product_type->name;?></h3>
-              </a>
-            </div>
+              <p class="description"><?php echo $product_type->description;?> Stuff</h3></p>
+              <p class="green-link"><a href="<?php echo get_term_link($product_type);?>">
+                <?php echo $product_type->name;?>
+              </a></p>
+            </li>
           <?php endforeach; ?>
     <?php endif; ?>
+  </ul>  
               <!--<pre><?php print_r ($product_type); ?></pre>-->
 
 </section>

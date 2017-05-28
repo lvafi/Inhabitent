@@ -1,9 +1,21 @@
+
+/* Front page */
+
 .home {
   h2 {
     text-align: center;
     font-weight: lighter;
     margin-bottom: 3.5rem;
     letter-spacing: 2px;
+  }
+  .site-branding {
+    background-image: url(../../images/logos/inhabitent-logo-tent-white.svg);
+    border-bottom: $base_solid_border;
+  }
+  .main-navigation{
+    a {
+      color: white;
+    }
   }
 }
 
@@ -34,3 +46,35 @@
     display: block;
 }
 
+/* Shop Stuff */
+.product-info {
+  
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+  padding: 0;
+  }
+  li {
+    border: $base_solid_border;
+    border-top-width: 5px;
+    text-align: center;
+    padding: 1rem .5rem;
+    width: 260px;
+    &:hover {
+      border-color: $color_orange;
+    }
+  }
+  img {
+    width: 70px;
+    margin-bottom: 1rem;
+  }
+  p {
+    text-align: center;
+    text-decoration: none;
+  }
+  a {
+    text-decoration: none;
+  }
+}
