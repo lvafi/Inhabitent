@@ -80,15 +80,18 @@
   ul {
     display: flex;
     justify-content: space-between;
+    margin:0;
   }
   li {
-    width: 355px;
+    width: 358px;
     overflow: hidden;
   }
-  img {
-    height: 245px;
-    width: auto;
+  .image-container {
     display: block;
+    width: auto;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
   }
   .post-wrap {
     border: $base_solid_border;
@@ -101,6 +104,87 @@
     p {
       font-size: .5rem;
       margin-bottom: .3rem;
+    }
+  }
+}
+
+
+/* Latest Adventure */
+
+.adventure {
+  ul {
+    padding: 0;
+    margin-bottom: 2.5rem;
+  }
+  li {
+    width: 270px;
+    height: 270px;
+    margin-left: 20px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    float: left;
+    &:first-child{
+      width: 540px;
+      height: 540px;
+      margin: 0;
+      img {
+        min-height: 640px;
+      }
+      h3 {
+        font-size: 3rem;
+      }
+    }
+    &:nth-child(2){
+      width: 560px;
+      height: 250px;
+      margin: 0 0 20px 20px;
+      h3 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  .adventure-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  img {
+    width: auto;
+    max-height: 400px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -90%);
+  }
+  .headline {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    padding: 3rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  h3 {
+    font: 1.5rem $font__main;
+    text-transform: none;
+    margin-bottom: 2.5rem;
+    a {
+      color: white;
+      &:hover {
+        color: $color_yellow;
+      }
+    }
+  }
+  .white-link {
+    a {
+      color: white;
+      border: 1px solid white;
+    }
+  }
+  .green-link {
+    a {
+    font-size: 1.1rem;
     }
   }
 }

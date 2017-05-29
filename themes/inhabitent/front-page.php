@@ -35,7 +35,6 @@ get_header(); ?>
     <?php endif; ?>
   </ul>  
               <!--<pre><?php print_r ($product_type); ?></pre>-->
-
 </section>
 
 
@@ -50,22 +49,45 @@ get_header(); ?>
   );?>
   <?php $journal_posts = get_posts( $args ); // returns an array of posts
     foreach ( $journal_posts as $post ) : setup_postdata( $post );?>
-    <li> 
-      <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-      <div class="image-container" style="background-image: url('<?php echo $thumb['0'];?>')">
-      </div>
-      <div class="post-wrap">
+    <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
+      <li> 
+        <div class="image-container" style="background-image: url('<?php echo $thumb['0'];?>')">
+        </div>
+        <div class="post-wrap">
         <p><?php echo get_the_time( "j F Y", $post->ID) ?>  / <?php echo $post->comment_count; ?> Comments  </p>
         <a href="<?php echo $post->guid; ?>"> <h2><?php echo $post->post_title; ?></h2>  </a>
         <p class="white-link"><a href="<?php echo $post->guid; ?>">  <span>Read Entry</span>  </a></p>
-      </div>
-    </li>  
+        </div>
+      </li>
     <?php endforeach; wp_reset_postdata();?>
-</ul>
-    <!--<?php wp_reset_postdata(); ?>-->
-    <p class="green-link"><a href="<?php echo get_post_type_archive_link( 'adventure' ); ?>">More Adventures</a></p>
+</ul>    
 </section>   
 
+<section class="adventure container">
+        <h2>Latest Adventures</h2>
+        <ul class="clearfix">
+          <?php
+          $args = array(
+            'post_type' => 'adventure',
+            'order' => 'DESC',
+            'numberposts' => 4,);
+            $adventure_posts = get_posts( $args ); // returns an array of posts
+            ?>
+            <?php foreach ( $adventure_posts as $post ) : setup_postdata( $post ); ?>
+              <li>
+                <div class="adventure-img"><?php the_post_thumbnail('large'); ?>
+                </div>
+                <div class="headline">
+                  <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                  <p class="white-link"><a href="<?php the_permalink(); ?>">Read More</a></p>
+                </div>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+          <p class="green-link"><a href="<?php echo get_post_type_archive_link( 'adventure' ); ?>">More Adventures</a></p>
+        </section><!-- .adventure -->
+
+</div> <!--primary -->
 <?php get_footer(); ?>
      
 
