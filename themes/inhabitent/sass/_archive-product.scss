@@ -1,0 +1,66 @@
+/*--------------------------------------------------------------
+# Archive Product Page
+--------------------------------------------------------------*/
+
+.page-header {
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+  li {
+    margin: 0 1.7rem;
+    font-family: $font_accent;
+    text-transform: uppercase;
+  }
+}
+
+.product-grid {
+  padding-top: 1rem;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  li {
+    width: 260px;
+    margin-bottom: 1rem;
+  }
+  .thumbnail-wrap{
+    overflow: hidden;
+    height: 240px;
+  }
+  img {
+    height: 100%;
+    width: auto;
+    display: block;
+  }
+}
+
+.product-wrap {
+  border: $base_solid_border;
+  border-top-width: 5px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  h2 {
+    font: 1rem $font__main;
+    text-transform: none;
+    line-height: 2;
+    letter-spacing: 0;
+    float: left;
+    width: 170px;
+    overflow: hidden;
+    white-space: nowrap;
+    span:after {
+      content: "..................................";
+    }
+  }
+  p {
+    font-family: $font__main;
+    margin-bottom: 0;
+    float:left;
+    width: 80px;
+    overflow: hidden;
+  }
+}

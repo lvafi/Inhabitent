@@ -40,8 +40,9 @@ get_header(); ?>
 
 
 <!--The Journal Section-->
+<section class="journal-feed container">
 <h2>Inhabitent Journal</h2>
-<section class="latest-entries container">
+<ul>
   <?php $args = array(
     // 'order' => 'ASC',
     'numberposts' => 3,
@@ -49,28 +50,23 @@ get_header(); ?>
   );?>
   <?php $journal_posts = get_posts( $args ); // returns an array of posts
     foreach ( $journal_posts as $post ) : setup_postdata( $post );?>
+    <li> 
       <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-      <div class="single-journal">
-        <div class="image-container" style="background-image: url('<?php echo $thumb['0'];?>')">
-        </div>
-        <p>
-          <?php echo get_the_time( "j F Y", $post->ID) ?> 
-          / 
-          <?php echo $post->comment_count; ?> Comments
-        </p>
-        <a href="<?php echo $post->guid; ?>">
-          <h2><?php echo $post->post_title; ?></h2>
-        </a>
-        <div class="blk-btn">
-          <a href="<?php echo $post->guid; ?>">
-            <span>Read Entry</span>
-          </a>
-        </div>
+      <div class="image-container" style="background-image: url('<?php echo $thumb['0'];?>')">
       </div>
-    <?php endforeach; ?>
-    <?php wp_reset_postdata(); ?>
+      <div class="post-wrap">
+        <p><?php echo get_the_time( "j F Y", $post->ID) ?>  / <?php echo $post->comment_count; ?> Comments  </p>
+        <a href="<?php echo $post->guid; ?>"> <h2><?php echo $post->post_title; ?></h2>  </a>
+        <p class="white-link"><a href="<?php echo $post->guid; ?>">  <span>Read Entry</span>  </a></p>
+      </div>
+    </li>  
+    <?php endforeach; wp_reset_postdata();?>
+</ul>
+    <!--<?php wp_reset_postdata(); ?>-->
+    <p class="green-link"><a href="<?php echo get_post_type_archive_link( 'adventure' ); ?>">More Adventures</a></p>
 </section>   
 
+<?php get_footer(); ?>
      
 
 

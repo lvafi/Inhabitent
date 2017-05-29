@@ -77,8 +77,8 @@ function textdomain_set_post_per_page( $query ) {
         $query->set('posts_per_page', 16);
 				$query->set('orderby', 'title');
 				$query->set('order', 'ASC');
-    }
-		else if ( is_post_type_archive( 'product_type' ) && !is_admin() && $query->is_main_query() ) {
+}
+	else if ( is_post_type_archive( 'product_type' ) && !is_admin() && $query->is_main_query() ) {
         $query->set('posts_per_page', 4);
 				$query->set('orderby', 'title');
 				$query->set('order', 'ASC');

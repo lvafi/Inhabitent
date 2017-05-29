@@ -220,8 +220,36 @@ th {
   padding: 0; }
 
 /*--------------------------------------------------------------
-# Embedded Fonts
+# Fonts
 --------------------------------------------------------------*/
+@font-face {
+  font-family: 'merriweather';
+  src: url("../fonts/merriweather-bold-webfont.eot");
+  src: url("../fonts/merriweather-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-bold-webfont.woff2") format("woff2"), url("../fonts/merriweather-bold-webfont.woff") format("woff"), url("../fonts/merriweather-bold-webfont.ttf") format("truetype"), url("../fonts/merriweather-bold-webfont.svg#merriweatherbold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'merriweather';
+  src: url("../fonts/merriweather-light-webfont.eot");
+  src: url("../fonts/merriweather-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-light-webfont.woff2") format("woff2"), url("../fonts/merriweather-light-webfont.woff") format("woff"), url("../fonts/merriweather-light-webfont.ttf") format("truetype"), url("../fonts/merriweather-light-webfont.svg#merriweatherlight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'novacento';
+  src: url("../fonts/novecentosanswide-normal-webfont.eot");
+  src: url("../fonts/mnovecentosanswide-normal-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/novecentosanswide-normal-webfont.woff2") format("woff2"), url("../fonts/novecentosanswide-normal-webfont.woff") format("woff"), url("../fonts/novecentosanswide-normal-webfont.ttf") format("truetype"), url("../fonts/novecentosanswide-normal-webfontsvg#mnovecentosanswide") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'novacento';
+  src: url("../fonts/novecentosanswide-demibold-webfont.eot");
+  src: url("../fonts/novecentosanswide-demibold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/novecentosanswide-demibold-webfont.woff2") format("woff2"), url("../fonts/novecentosanswide-demibold-webfont.woff") format("woff"), url("../fonts/novecentosanswide-demibold-webfont.ttf") format("truetype"), url("../fonts/novecentosanswide-demibold-webfont.svg#novecentosanswide-demibold") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -231,14 +259,16 @@ input,
 select,
 textarea {
   color: #404040;
-  font-family: sans-serif;
+  font-family: "merriweather", serif;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5; }
+  line-height: 1.75; }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  clear: both; }
+  clear: both;
+  letter-spacing: .15rem;
+  font-family: "novacento", "arial", "sans-serif"; }
 
 /* Copy */
 p {
@@ -688,9 +718,6 @@ body:not(.home):not(.page-template-page-about):not(.single-adventure) #content {
 section {
   width: 100%; }
 
-section:not(.hero):not(.about-hero) {
-  padding-top: 4.5rem; }
-
 .content-area {
   width: 100%; }
 
@@ -726,6 +753,16 @@ section:not(.hero):not(.about-hero) {
     padding: .75rem 1.75rem; }
     .green-link a:hover {
       background-color: #404040; }
+
+.white-link a {
+  color: black;
+  text-transform: uppercase;
+  border: 1px solid black;
+  padding: .75rem 1.75rem; }
+  .white-link a:hover {
+    background-color: #248A83;
+    border-color: #248A83;
+    color: white; }
 
 /*--------------------------------------------------------------
 # Media
@@ -821,46 +858,65 @@ object {
     font-size: 0;
     margin: 0; }
 
-h2 {
-  text-align: center;
-  font-weight: lighter;
-  margin-bottom: 3.5rem;
-  letter-spacing: 2px; }
-
 .image-container {
   height: 75px;
   width: 75px;
   display: block; }
 
 /* Shop Stuff */
-.product-info ul {
+.product-info {
+  padding-bottom: 0; }
+  .product-info ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .product-info li {
+    border: 1px solid #e1e1e1;
+    border-top-width: 5px;
+    text-align: center;
+    padding: 1rem .5rem;
+    width: 260px; }
+    .product-info li:hover {
+      border-color: #d99054; }
+  .product-info img {
+    width: 70px;
+    margin-bottom: 1rem; }
+  .product-info p {
+    text-align: center;
+    text-decoration: none; }
+  .product-info a {
+    text-decoration: none; }
+
+/* Inhabitent Journal */
+.journal-feed ul {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
-  list-style: none;
-  margin: 0;
-  padding: 0; }
+      justify-content: space-between; }
 
-.product-info li {
+.journal-feed li {
+  width: 355px;
+  overflow: hidden; }
+
+.journal-feed img {
+  height: 245px;
+  width: auto;
+  display: block; }
+
+.journal-feed .post-wrap {
   border: 1px solid #e1e1e1;
   border-top-width: 5px;
-  text-align: center;
-  padding: 1rem .5rem;
-  width: 260px; }
-  .product-info li:hover {
-    border-color: #d99054; }
-
-.product-info img {
-  width: 70px;
-  margin-bottom: 1rem; }
-
-.product-info p {
-  text-align: center;
-  text-decoration: none; }
-
-.product-info a {
-  text-decoration: none; }
+  padding: 1rem; }
+  .journal-feed .post-wrap h3 {
+    margin-bottom: 1rem;
+    line-height: 1.1; }
+  .journal-feed .post-wrap p {
+    font-size: .5rem;
+    margin-bottom: .3rem; }
 
 .widget-area {
   width: 27%;
@@ -871,6 +927,9 @@ h2 {
 .site-content {
   display: -ms-flexbox;
   display: flex; }
+
+.widget-title h2 {
+  margin-bottom: 0px; }
 
 .about-hero {
   height: 100vh;
@@ -996,3 +1055,64 @@ h2 {
     font-size: 1.8rem;
     letter-spacing: .5px;
     font-weight: normal; }
+
+/*--------------------------------------------------------------
+# Archive Product Page
+--------------------------------------------------------------*/
+.page-header ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.page-header li {
+  margin: 0 1.7rem;
+  font-family: "novacento", "arial", "sans-serif";
+  text-transform: uppercase; }
+
+.product-grid {
+  padding-top: 1rem; }
+  .product-grid ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    list-style: none; }
+  .product-grid li {
+    width: 260px;
+    margin-bottom: 1rem; }
+  .product-grid .thumbnail-wrap {
+    overflow: hidden;
+    height: 240px; }
+  .product-grid img {
+    height: 100%;
+    width: auto;
+    display: block; }
+
+.product-wrap {
+  border: 1px solid #e1e1e1;
+  border-top-width: 5px;
+  padding: 1rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+  .product-wrap h2 {
+    font: 1rem "merriweather", serif;
+    text-transform: none;
+    line-height: 2;
+    letter-spacing: 0;
+    float: left;
+    width: 170px;
+    overflow: hidden;
+    white-space: nowrap; }
+    .product-wrap h2 span:after {
+      content: ".................................."; }
+  .product-wrap p {
+    font-family: "merriweather", serif;
+    margin-bottom: 0;
+    float: left;
+    width: 80px;
+    overflow: hidden; }

@@ -91,9 +91,9 @@ section {
 	width: 100%;
 }
 
-section:not(.hero):not(.about-hero) {
-  padding-top: 4.5rem;
-}
+// section:not(.hero):not(.about-hero) {
+//   padding-top: 4.5rem;
+// }
 
 .content-area{
 	width:100%;
@@ -144,6 +144,20 @@ section:not(.hero):not(.about-hero) {
     padding: .75rem 1.75rem;
     &:hover {
       background-color: $color__text-main;
+    }
+  }
+}
+.white-link, {
+  a {
+    // font: 1rem $font_accent;
+		color: black;
+    text-transform: uppercase;
+    border: 1px solid black;
+    padding: .75rem 1.75rem;
+    &:hover {
+      background-color: $color_green;
+      border-color: $color_green;
+      color: white;
     }
   }
 }
