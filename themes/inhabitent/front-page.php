@@ -63,30 +63,33 @@ get_header(); ?>
 </ul>    
 </section>   
 
-<section class="adventure container">
-        <h2>Latest Adventures</h2>
-        <ul class="clearfix">
-          <?php
-          $args = array(
-            'post_type' => 'adventure',
-            'order' => 'DESC',
-            'numberposts' => 4,);
-            $adventure_posts = get_posts( $args ); // returns an array of posts
-            ?>
-            <?php foreach ( $adventure_posts as $post ) : setup_postdata( $post ); ?>
-              <li>
-                <div class="adventure-img"><?php the_post_thumbnail('large'); ?>
-                </div>
-                <div class="headline">
-                  <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-                  <p class="white-link"><a href="<?php the_permalink(); ?>">Read More</a></p>
-                </div>
-              </li>
-            <?php endforeach; ?>
-          </ul>
-          <p class="green-link"><a href="<?php echo get_post_type_archive_link( 'adventure' ); ?>">More Adventures</a></p>
-        </section><!-- .adventure -->
 
+
+<h1>Latest Adventures</h1>
+<ul class="adventure-feed-list">
+	
+			 <li class="indvid-adventure-box" >
+						 <span class=" adventure-image-1"></span>
+            <h1>Getting Back to Nature in a Canoe</h1>
+					 <button>Read More</button>
+				</li>
+		
+			 <li class="indvid-adventure-box">
+						 <span class=" adventure-image-2"></span>
+            <h1>A Night with Friends at the Beach</h1>
+					  <button>Read More</button>
+				</li>
+			 <li class="indvid-adventure-box">
+				     <span class=" adventure-image-3"></span>
+            <h2>Star-Gazing at the Night Sky</h2>
+					  <button>Read More</button>
+				</li>
+			 <li class="indvid-adventure-box">
+						 <span class=" adventure-image-4"></span>
+            <h2>Taking in the View at Big Mountain</h2>
+            <button>Read More</button>
+				</li>
+    </ul> 
 </div> <!--primary -->
 <?php get_footer(); ?>
      
