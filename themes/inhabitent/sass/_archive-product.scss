@@ -6,6 +6,8 @@
   ul {
     display: flex;
     justify-content: center;
+    margin: 0;
+    padding:0;
   }
   li {
     margin: 0 1.7rem;
@@ -16,11 +18,14 @@
 
 .product-grid {
   padding-top: 1rem;
+
   ul {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     list-style: none;
+    margin: 0;
+    padding:0;
   }
   li {
     width: 260px;
