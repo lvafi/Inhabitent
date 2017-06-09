@@ -26,7 +26,7 @@ get_header(); ?>
           <?php foreach ( $product_types as $product_type ) : ?>
             <li>
               <img src="<?php echo get_template_directory_uri() . '/images/product-type-icons/' . $product_type->slug; ?>.svg">
-              <p class="description"><?php echo $product_type->description;?> Stuff</h3></p>
+              <p class="description"><?php echo $product_type->description;?></h3></p>
               <p class="green-link"><a href="<?php echo get_term_link($product_type);?>">
                 <?php echo $product_type->name;?>
               </a></p>
@@ -42,12 +42,12 @@ get_header(); ?>
 <section class="journal-feed container">
 <h2>Inhabitent Journal</h2>
 <ul>
-  <?php $args = array(
+  <?php $news_args = array(
     // 'order' => 'ASC',
     'numberposts' => 3,
     'post_type' => 'post',
   );?>
-  <?php $journal_posts = get_posts( $args ); // returns an array of posts
+  <?php $journal_posts = get_posts( $news_args ); // returns an array of posts
     foreach ( $journal_posts as $post ) : setup_postdata( $post );?>
     <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
       <li> 
@@ -68,11 +68,11 @@ get_header(); ?>
   <h2>Latest Adventures</h2>
   <ul class="clearfix">
     <?php
-    $arg = array(
-      'post_type' => 'adventure',
+    $adventure_args = array(
+      'post_type' => 'adventures',
 							'order' => 'DESC',
 							'posts_per_page' => 4,);
-    	$adventure_posts = get_posts( $args ); // returns an array of posts
+    	$adventure_posts = get_posts( $adventure_args ); // returns an array of posts
 							?>
 							<?php foreach ( $adventure_posts as $post ) : setup_postdata( $post ); ?>
 								<li>
@@ -83,7 +83,7 @@ get_header(); ?>
 										<p class="white-link"><a href="<?php the_permalink(); ?>">Read More</a></p>
 									</div>
 								</li>
-							<?php endforeach; ?>          
+							<?php endforeach; wp_reset_postdata(); ?>          
 </ul> 
 <p class="green-link"><a href="<?php echo get_post_type_archive_link( 'adventure' ); ?>">More Adventures</a></p>
 </section>
