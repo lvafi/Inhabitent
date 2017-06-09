@@ -84,16 +84,16 @@ body:not(.home):not(.page-template-page-about):not(.single-adventure) #content {
 .container {
 	width: 1120px;
 	margin: 0 auto;
-	//height: 100%;
+	// height: 100%;
 }
 
 section {
 	width: 100%;
 }
 
-// section:not(.hero):not(.about-hero) {
-//   padding-top: 4.5rem;
-// }
+section:not(.hero):not(.about-hero) {
+  padding-top: 4.5rem;
+}
 
 .content-area{
 	width:100%;

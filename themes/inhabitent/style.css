@@ -685,6 +685,9 @@ body:not(.home):not(.page-template-page-about):not(.single-adventure) #content {
 section {
   width: 100%; }
 
+section:not(.hero):not(.about-hero) {
+  padding-top: 4.5rem; }
+
 .content-area {
   width: 100%; }
 
@@ -904,8 +907,6 @@ object {
     width: 540px;
     height: 540px;
     margin: 0; }
-    .adventure li:first-child img {
-      min-height: 640px; }
     .adventure li:first-child h3 {
       font-size: 3rem; }
   .adventure li:nth-child(2) {
@@ -917,17 +918,19 @@ object {
 
 .adventure .adventure-img {
   position: absolute;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0; }
-
-.adventure img {
-  width: auto;
-  max-height: 400px;
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -90%); }
+  .adventure .adventure-img img {
+    width: auto;
+    height: 270px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: none;
+    min-height: 700px; }
 
 .adventure .headline {
   position: absolute;
@@ -941,9 +944,13 @@ object {
   text-transform: none;
   margin-bottom: 2.5rem; }
   .adventure h3 a {
-    color: white; }
+    color: white;
+    text-decoration: none; }
     .adventure h3 a:hover {
       color: #f0e4d1; }
+
+.adventure .adventure-container {
+  margin: 0 auto; }
 
 .adventure .white-link a {
   color: white;

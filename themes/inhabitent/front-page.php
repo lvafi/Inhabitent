@@ -64,7 +64,7 @@ get_header(); ?>
 </section>   
 
 
-<section class="adventure container">
+<section class="adventure">
   <h2>Latest Adventures</h2>
   <ul class="clearfix">
     <?php
@@ -76,7 +76,8 @@ get_header(); ?>
 							?>
 							<?php foreach ( $adventure_posts as $post ) : setup_postdata( $post ); ?>
 								<li>
-									<div class="adventure-img"><?php the_post_thumbnail('large'); ?>
+									<div class="adventure-img">
+                    <?php the_post_thumbnail('original'); ?>
 									</div>
 									<div class="headline">
 										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>

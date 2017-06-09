@@ -1,4 +1,3 @@
-
 /* Front page */
 
 .home {
@@ -128,9 +127,7 @@
       width: 540px;
       height: 540px;
       margin: 0;
-      img {
-        min-height: 640px;
-      }
+
       h3 {
         font-size: 3rem;
       }
@@ -144,19 +141,24 @@
       }
     }
   }
+  
   .adventure-img {
     position: absolute;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-  }
-  img {
-    width: auto;
-    max-height: 400px;
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -90%);
+
+    img {
+      width: auto;
+      height: 270px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: none;
+      min-height: 700px;
+    }
   }
   .headline {
     position: absolute;
@@ -171,11 +173,21 @@
     margin-bottom: 2.5rem;
     a {
       color: white;
+      text-decoration: none;
       &:hover {
         color: $color_yellow;
       }
     }
   }
+  .adventure-container{
+    margin: 0 auto;
+  } 
+  // .container {
+  //   max-width: 1152px;
+  //   margin: 0 auto;
+  //   height: 100%;
+  //   padding: 0 1rem;
+  // }
   .white-link {
     a {
       color: white;
@@ -188,6 +200,9 @@
     }
   }
 }
+
+
+
 
 
 
