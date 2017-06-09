@@ -1,0 +1,69 @@
+/*--------------------------------------------------------------
+# Adventure Archive
+--------------------------------------------------------------*/
+
+.post-type-archive-adventure {
+  h1 {
+    text-align: center;
+  }
+}
+
+.adventure-grid {
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  li {
+    width: 550px;
+    height: 550px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    .adventure-img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    img {
+      width: auto;
+      max-height: 630px;
+      position: absolute;
+      top: 75%;
+      left: 50%;
+      transform: translate(-50%, -90%);
+    }
+    .headline {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      padding: 4rem 1.5rem;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    h2 {
+      font: 3rem $font__main;
+      text-transform: none;
+      margin-bottom: 4.5rem;
+      a {
+        color: white;
+        &:hover {
+          color: $color_yellow;
+        }
+      }
+    }
+  }
+  .white-link {
+    a {
+      color: white;
+      border: 1px solid white;
+      &:hover {
+        border-color: $color_green;
+      }
+    }
+  }
+}

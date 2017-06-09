@@ -863,8 +863,7 @@ object {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
-  margin: 0; }
+      justify-content: space-between; }
 
 .journal-feed li {
   width: 358px;
@@ -952,100 +951,6 @@ object {
 
 .adventure .green-link a {
   font-size: 1.1rem; }
-
-/* adventure grid */
-.adventure-feed-list {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-flow: row wrap;
-      flex-flow: row wrap;
-  padding: 0;
-  margin: 0;
-  position: relative;
-  list-style-type: none; }
-
-.indvid-adventure-box {
-  position: relative; }
-  .indvid-adventure-box h1 {
-    color: white;
-    font-family: 'merriweather';
-    font-weight: light;
-    text-transform: none;
-    line-height: 1.3; }
-  .indvid-adventure-box h2 {
-    font-family: 'merriweather';
-    position: absolute;
-    top: 0px;
-    color: white;
-    line-height: 1.3;
-    font-weight: light; }
-  .indvid-adventure-box:nth-child(1) {
-    margin-right: 20px;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)) center, url("../../images/adventure/canoe-girl.jpg") center no-repeat;
-    background-size: 530px 550px;
-    overflow: hidden;
-    width: 530px;
-    height: 550px; }
-    .indvid-adventure-box:nth-child(1) button {
-      color: white;
-      box-shadow: none;
-      border: 1px white solid;
-      background: none;
-      border-radius: 0;
-      position: absolute;
-      top: 195px;
-      left: 25px; }
-      .indvid-adventure-box:nth-child(1) button:hover {
-        border-color: #19625D;
-        background: #19625D; }
-  .indvid-adventure-box:nth-child(2) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)) center, url("../../images/adventure/beach-bonfire.jpg") center no-repeat;
-    background-size: 565px 260px;
-    object-fit: cover;
-    width: 565px;
-    height: 260px; }
-    .indvid-adventure-box:nth-child(2) button {
-      color: white;
-      box-shadow: none;
-      border: 1px white solid;
-      background: none;
-      border-radius: 0;
-      position: absolute;
-      top: 195px;
-      left: 25px; }
-      .indvid-adventure-box:nth-child(2) button:hover {
-        border-color: #19625D;
-        background: #19625D; }
-  .indvid-adventure-box:nth-child(3), .indvid-adventure-box:nth-child(4) {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-    position: absolute;
-    top: 280px; }
-    .indvid-adventure-box:nth-child(3) h2, .indvid-adventure-box:nth-child(4) h2 {
-      padding: 10px;
-      position: absolute;
-      top: 0px; }
-    .indvid-adventure-box:nth-child(3) button, .indvid-adventure-box:nth-child(4) button {
-      color: white;
-      box-shadow: none;
-      border: 1px white solid;
-      background: none;
-      border-radius: 0;
-      position: absolute;
-      top: 160px;
-      left: 25px; }
-      .indvid-adventure-box:nth-child(3) button:hover, .indvid-adventure-box:nth-child(4) button:hover {
-        border-color: #19625D;
-        background: #19625D; }
-  .indvid-adventure-box:nth-child(3) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)) center, url("../../images/adventure/night-sky.jpg") center no-repeat;
-    background-size: 270px 270px;
-    right: 0px; }
-  .indvid-adventure-box:nth-child(4) {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(100, 100, 100, 0.5)) center, url("../../images/adventure/mountain-hikers.jpg") center no-repeat;
-    background-size: 270px 270px;
-    right: 295px; }
 
 .widget-area {
   width: 27%;
@@ -1249,3 +1154,93 @@ object {
     float: left;
     width: 80px;
     overflow: hidden; }
+
+/*--------------------------------------------------------------
+# Adventure Archive
+--------------------------------------------------------------*/
+.post-type-archive-adventure h1 {
+  text-align: center; }
+
+.adventure-grid ul {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  margin-bottom: 1rem; }
+
+.adventure-grid li {
+  width: 550px;
+  height: 550px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px; }
+  .adventure-grid li .adventure-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  .adventure-grid li img {
+    width: auto;
+    max-height: 630px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -90%); }
+  .adventure-grid li .headline {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 4rem 1.5rem;
+    background-color: rgba(0, 0, 0, 0.4); }
+  .adventure-grid li h2 {
+    font: 3rem "merriweather", serif;
+    text-transform: none;
+    margin-bottom: 4.5rem; }
+    .adventure-grid li h2 a {
+      color: white; }
+      .adventure-grid li h2 a:hover {
+        color: #f0e4d1; }
+
+.adventure-grid .white-link a {
+  color: white;
+  border: 1px solid white; }
+  .adventure-grid .white-link a:hover {
+    border-color: #248A83; }
+
+/*--------------------------------------------------------------
+# Search Page Results
+--------------------------------------------------------------*/
+.search-results h1 {
+  padding-bottom: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #e1e1e1; }
+
+.search-results h2 a {
+  color: #248A83; }
+
+.search-results .entry-summary p {
+  margin-bottom: 2rem; }
+
+.search-results article {
+  margin-bottom: 5rem; }
+
+.search-results .search-pagination {
+  border-top: 1px solid #e1e1e1;
+  padding-top: 2rem; }
+  .search-results .search-pagination .current {
+    background-color: #404040; }
+
+.search-results .page-numbers {
+  color: #fff;
+  font-family: "novacento", "arial", "sans-serif";
+  text-transform: uppercase;
+  background-color: #248A83;
+  padding: .4rem .8rem;
+  cursor: pointer; }
+  .search-results .page-numbers:hover {
+    background-color: #404040; }
