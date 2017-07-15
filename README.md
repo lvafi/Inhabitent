@@ -1,7 +1,7 @@
 Inhabitent Camping Supply Co.
 ======
-![inhabitent-browser-mockup](https://cloud.githubusercontent.com/assets/20465505/20635409/769c92da-b311-11e6-8c6a-ccc19726d401.jpg)
-
+## Project 4: Inhabitent 
+![Inhabitent Screenshot](screenshot.png)
 ## Project
 This is a multi-page website for a camping supply company. The objective for this project is to build a CMS site using WordPress.
 
