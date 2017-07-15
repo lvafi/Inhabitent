@@ -3,7 +3,7 @@
 ## Description
 This dynamic multi-page website is using WordPress for the content managment system. The site includes a display of camping products. 
 
-## Technology
+## Technologies used
 * WordPress
 * Git/Github
 * Sass (http://sass-lang.com/)
@@ -17,9 +17,11 @@ This dynamic multi-page website is using WordPress for the content managment sys
 * Gulp
 
 
-## Learning Experience
-This is the biggest project I ever worked on so far. I've built this theme from scratch using a starter theme. This is the first time I made wordpress site with plugins or custom post types. I've created a Business Hours and Contact Info plugins which allows the users to set up their own opening hours and contact information. Once those are done, I've created customized Adventures and Shopping post types. My Sass skills were honed working on this project as there were a lot of it involved.
+## Personal Learnings:
+- This project requires a lot of CSS to style different pages. In the future I would take more time a head of time to find the similarities between the pages to make a template for similar designed pages.
+- This project is mostly dynamic and let the user to change the content and images from the back end of the wordpress. 
+- my main challenge was to understanding the template hierarchy
+structure. Going through the process of putting files together I have got a better understand of the wordpress structure.
+- This project wasn't originally designed to be responsive because of time constraints.
 
-This project wasn't originally designed to be responsive because of time constraints.
 
-As a camping fan, this is my favorite project so far and I'm very proud of it.
