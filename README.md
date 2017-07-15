@@ -1,19 +1,16 @@
-Inhabitent Camping Supply Co.
-======
 ## Project 4: Inhabitent 
-![Inhabitent Screenshot](screenshot.png)
-## Project
-This is a multi-page website for a camping supply company. The objective for this project is to build a CMS site using WordPress.
+![Inhabitent Screenshot](themes/inhabitent/images/screenshot.png)
+## Description
+This dynamic multi-page website is using WordPress for the content managment system. The site includes a display of camping products. 
 
 ## Technology
-* HTML5
-* CSS3/Sass/SCSS
-* Responsive Web Design
-* PHP
 * WordPress
-* jQuery
-* Command Line Interface
 * Git/Github
+* Sass (http://sass-lang.com/)
+* PHP
+* jQuery (https://jquery.com/)
+
+
 
 ## Developers Dependencies
 * BrowserSync (https://www.browsersync.io/)
