@@ -268,7 +268,8 @@ textarea {
 h1, h2, h3, h4, h5, h6 {
   clear: both;
   letter-spacing: .15rem;
-  font-family: "novacento", "arial", "sans-serif"; }
+  font-family: "novacento", "arial", "sans-serif";
+  color: #2f1339; }
 
 /* Copy */
 p {
@@ -680,7 +681,8 @@ body:not(.home):not(.page-template-page-about):not(.single-adventure) #content {
 
 .container {
   width: 1120px;
-  margin: 0 auto; }
+  margin-left: auto;
+  margin-right: auto; }
 
 section {
   width: 100%; }
@@ -802,8 +804,10 @@ object {
 .home h2 {
   text-align: center;
   font-weight: lighter;
-  margin-bottom: 3.5rem;
-  letter-spacing: 2px; }
+  margin-bottom: 4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 2.4rem; }
 
 .home .site-branding {
   background-image: url(../../images/logos/inhabitent-logo-tent-white.svg);
@@ -862,102 +866,98 @@ object {
     text-decoration: none; }
 
 /* Inhabitent Journal */
-.journal-feed ul {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between; }
-
-.journal-feed li {
-  width: 358px;
-  overflow: hidden; }
-
-.journal-feed .image-container {
-  display: block;
-  width: auto;
-  height: 200px;
-  background-position: center;
-  background-size: cover; }
-
-.journal-feed .post-wrap {
-  border: 1px solid #e1e1e1;
-  border-top-width: 5px;
-  padding: 1rem; }
-  .journal-feed .post-wrap h3 {
-    margin-bottom: 1rem;
-    line-height: 1.1; }
-  .journal-feed .post-wrap p {
-    font-size: .5rem;
-    margin-bottom: .3rem; }
+.journal-feed {
+  padding-bottom: 0; }
+  .journal-feed ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+  .journal-feed li {
+    width: 358px;
+    overflow: hidden; }
+  .journal-feed .image-container {
+    display: block;
+    width: auto;
+    height: 200px;
+    background-position: center;
+    background-size: cover; }
+  .journal-feed .post-wrap {
+    border: 1px solid #e1e1e1;
+    border-top-width: 5px;
+    padding: 1rem; }
+    .journal-feed .post-wrap h3 {
+      margin-bottom: 1rem;
+      line-height: 1.1; }
+    .journal-feed .post-wrap p {
+      font-size: .5rem;
+      margin-bottom: .3rem; }
+    .journal-feed .post-wrap a {
+      text-decoration: none; }
 
 /* Latest Adventure */
-.adventure ul {
-  padding: 0;
-  margin-bottom: 2.5rem; }
+.adventures ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0; }
 
-.adventure li {
-  width: 270px;
-  height: 270px;
-  margin-left: 20px;
-  color: white;
+.adventures li {
+  float: left;
   position: relative;
-  overflow: hidden;
-  float: left; }
-  .adventure li:first-child {
-    width: 540px;
-    height: 540px;
-    margin: 0; }
-    .adventure li:first-child h3 {
-      font-size: 3rem; }
-  .adventure li:nth-child(2) {
-    width: 560px;
-    height: 250px;
-    margin: 0 0 20px 20px; }
-    .adventure li:nth-child(2) h3 {
-      font-size: 2.5rem; }
+  overflow: hidden; }
 
-.adventure .adventure-img {
-  position: absolute;
-  top: 0;
+.adventures .story-wrapper {
   bottom: 0;
   left: 0;
-  right: 0; }
-  .adventure .adventure-img img {
-    width: auto;
-    height: 270px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    max-width: none;
-    min-height: 700px; }
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1; }
 
-.adventure .headline {
+.adventures li:first-child {
+  width: 540px;
+  height: 540px;
+  margin: 0; }
+  .adventures li:first-child img {
+    min-height: 640px; }
+
+.adventures li:nth-child(2) {
+  width: 560px;
+  height: 250px;
+  margin: 0 0 20px 20px; }
+
+.adventures li:nth-child(3) {
+  width: 270px;
+  height: 270px;
+  margin: 0 0 20px 20px; }
+
+.adventures li:last-child {
+  width: 270px;
+  height: 270px;
+  margin: 0 0 20px 20px; }
+
+.adventures .story-info {
   position: absolute;
   top: 0;
   height: 100%;
   padding: 3rem 1.5rem;
   background-color: rgba(0, 0, 0, 0.4); }
 
-.adventure h3 {
-  font: 1.5rem "merriweather", serif;
-  text-transform: none;
-  margin-bottom: 2.5rem; }
-  .adventure h3 a {
-    color: white;
-    text-decoration: none; }
-    .adventure h3 a:hover {
-      color: #f0e4d1; }
+.adventures .img-adventure img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
-.adventure .adventure-container {
-  margin: 0 auto; }
-
-.adventure .white-link a {
-  color: white;
-  border: 1px solid white; }
-
-.adventure .green-link a {
-  font-size: 1.1rem; }
+.adventures img {
+  position: absolute;
+  width: auto;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -90%); }
 
 .widget-area {
   width: 27%;

@@ -7,7 +7,6 @@ This is a multi-page website for a camping supply company. The objective for thi
 
 ## Technology
 * HTML5
-* Gulp
 * CSS3/Sass/SCSS
 * Responsive Web Design
 * PHP
@@ -15,6 +14,11 @@ This is a multi-page website for a camping supply company. The objective for thi
 * jQuery
 * Command Line Interface
 * Git/Github
+
+## Developers Dependencies
+* BrowserSync (https://www.browsersync.io/)
+* Gulp
+
 
 ## Learning Experience
 This is the biggest project I ever worked on so far. I've built this theme from scratch using a starter theme. This is the first time I made wordpress site with plugins or custom post types. I've created a Business Hours and Contact Info plugins which allows the users to set up their own opening hours and contact information. Once those are done, I've created customized Adventures and Shopping post types. My Sass skills were honed working on this project as there were a lot of it involved.

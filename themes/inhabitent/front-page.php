@@ -55,7 +55,7 @@ get_header(); ?>
         </div>
         <div class="post-wrap">
         <p><?php echo get_the_time( "j F Y", $post->ID) ?>  / <?php echo $post->comment_count; ?> Comments  </p>
-        <a href="<?php echo $post->guid; ?>"> <h2><?php echo $post->post_title; ?></h2>  </a>
+        <a href="<?php echo $post->guid; ?>"> <h3><?php echo $post->post_title; ?></h3>  </a>
         <p class="white-link"><a href="<?php echo $post->guid; ?>">  <span>Read Entry</span>  </a></p>
         </div>
       </li>
@@ -64,33 +64,42 @@ get_header(); ?>
 </section>   
 
 
-<section class="adventure">
+<section class="adventures container">
   <h2>Latest Adventures</h2>
   <ul class="clearfix">
-    <?php
-    $adventure_args = array(
-      'post_type' => 'adventures',
-							'order' => 'DESC',
-							'posts_per_page' => 4,);
-    	$adventure_posts = get_posts( $adventure_args ); // returns an array of posts
-							?>
-							<?php foreach ( $adventure_posts as $post ) : setup_postdata( $post ); ?>
-								<li>
-									<div class="adventure-img">
-                    <?php the_post_thumbnail('original'); ?>
-									</div>
-									<div class="headline">
-										<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-										<p class="white-link"><a href="<?php the_permalink(); ?>">Read More</a></p>
-									</div>
-								</li>
-							<?php endforeach; wp_reset_postdata(); ?>          
-</ul> 
-<p class="green-link"><a href="<?php echo get_post_type_archive_link( 'adventure' ); ?>">More Adventures</a></p>
+   <?php 
+      $args = array( 
+        'post_type' => 'Adventures', 
+        'orderby' => 'date', 
+        'order' => 'DESC',
+        'posts_per_page' => 4 
+    
+    ); $custom_query = new WP_Query( $args );
+                    
+    if($custom_query->have_posts()) : while($custom_query->have_posts()) : $custom_query->the_post(); ?> 
+      <li>
+          <div class="img-adventure">
+          <img src="<?php if ( has_post_thumbnail() ) { the_post_thumbnail_url('full');  }   ?>">
+          </div>
+          <div class="story-info">
+            <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+            <a class="white-btn" href="<?php the_permalink(); ?>">Read more</a>
+          </div>
+       
+      </li>
+
+
+
+
+    <?php endwhile; endif; wp_reset_postdata(); ?>
+ 
+  </ul>
+  <p class="green-link"><a href="<?php echo get_post_type_archive_link( 'adventure' ); ?>">More Adventures</a></p>
 </section>
 </div> <!--primary -->
 </div>
 <?php get_footer(); ?>
      
+
 
 
