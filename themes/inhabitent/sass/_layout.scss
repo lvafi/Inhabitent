@@ -118,83 +118,64 @@
 
 /* Latest Adventure */
 
-.adventures {
-  ul {
-    list-style-type: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  li {
-    float: left;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .story-wrapper {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 1;
-  }
-  //first item
-  li:first-child {
-    width: 540px;
-    height: 540px;
-    margin: 0;
-    img {
-      min-height: 640px;
-    }
-  }
-
-  // second item
-  li:nth-child(2) {
-    width: 560px;
-    height: 250px;
-    margin: 0 0 20px 20px;
-  }
-  
-  // third item
-  li:nth-child(3) {
-    width: 270px;
-    height: 270px;
-    margin: 0 0 20px 20px;
-  }
-  //forth child
-  li:last-child {
-    width: 270px;
-    height: 270px;
-    margin: 0 0 20px 20px;
-  }
-  // .see-more {
-  //   margin-top: 2.25rem;
-  // }
-  .story-info {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    padding: 3rem 1.5rem;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
-  .img-adventure img {
-    position: absolute;
-    bottom: 0;
-    left:0;
-    right: 0;
-  }
-  img {
-    position: absolute;
-    width: auto;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -90%);
-  }
+.adventures li {
+	list-style-type: none;
+	margin-bottom: 10px;
+	
 }
 
+.adventures li:first-child {
+	width: 550px;
+	height: 540px;
+}
 
+.adventures li:nth-child(2) {
+	width: 550px;
+	height: 250px;
+}
 
+.adventures li:nth-child(3),
+.adventures li:nth-child(4) {
+	width: 270px;
+	height: 280px;
+}
 
+.story-wrapper {
+	position: relative;
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	height: 100%;
+}
+
+.story-wrapper:after {
+    background: rgba(0,0,0,.35);
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.story-info {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	z-index: 999;
+}
+
+.story-info h3 a {
+	font-size: 2rem;
+	color: #fff;
+	text-decoration: none;
+}
+
+.adventures ul {
+  margin: 0;
+  padding: 0;
+}
 
 
 

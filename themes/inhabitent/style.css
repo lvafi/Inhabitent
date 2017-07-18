@@ -219,9 +219,6 @@ td,
 th {
   padding: 0; }
 
-/*--------------------------------------------------------------
-# Fonts
---------------------------------------------------------------*/
 @font-face {
   font-family: 'merriweather';
   src: url("../fonts/merriweather-bold-webfont.eot");
@@ -451,12 +448,12 @@ a {
 
 /* Menus */
 .site-header {
-  font-family: "novacento", "arial", "sans-serif";
   text-transform: uppercase;
-  height: 50px;
   width: 100%;
-  position: absolute;
-  z-index: 1; }
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid #666; }
   .site-header .container {
     display: -ms-flexbox;
     display: flex;
@@ -474,23 +471,14 @@ a {
       height: 33px;
       width: 50px; }
 
-.reverse-nav {
-  background-color: transparent;
-  position: absolute;
-  border: 0; }
-  .reverse-nav a {
-    color: white;
-    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5); }
-    .reverse-nav a:hover {
-      color: #f0e4d1; }
-  .reverse-nav .site-branding {
-    background-image: url("../../images/inhabitent-logo-tent-white.svg"); }
-  .reverse-nav input[type=search] {
-    color: white; }
+.site-branding {
+  background-image: url("../../images/inhabitent-logo-tent-white.svg"); }
 
 .main-navigation {
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center; }
   .main-navigation ul {
     display: none;
     list-style: none;
@@ -521,58 +509,23 @@ a {
     display: block;
     text-decoration: none;
     color: green; }
-  .main-navigation fieldset {
-    border: 0;
-    padding: 0;
-    margin: 0; }
-  .main-navigation .show-search {
-    border: 0;
-    padding: 0;
-    margin: 0;
-    display: inline-block;
-    cursor: pointer;
-    font-size: 1rem; }
-  .main-navigation input[type=search] {
-    font: 1rem "novacento", "arial", "sans-serif";
-    background-color: transparent;
-    text-transform: uppercase;
-    border: 0;
-    padding-left: 1rem;
-    margin: 0;
-    width: 200px;
-    display: none; }
-    .main-navigation input[type=search]:focus {
-      outline: 0; }
 
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block; }
 
-@media screen and (min-width: 768px) {
-  .menu-toggle {
-    display: none; }
-  .main-navigation ul {
-    display: block; } }
+.menu-toggle {
+  display: none; }
 
-.site-main .comment-navigation, .site-main
-.posts-navigation, .site-main
-.post-navigation {
-  margin: 0 0 1.5rem;
-  overflow: hidden; }
+.main-navigation ul {
+  display: block; }
 
-.comment-navigation .nav-previous,
-.posts-navigation .nav-previous,
-.post-navigation .nav-previous {
-  float: left;
-  width: 50%; }
+.search-field {
+  display: none; }
 
-.comment-navigation .nav-next,
-.posts-navigation .nav-next,
-.post-navigation .nav-next {
-  float: right;
-  text-align: right;
-  width: 50%; }
+.show-search {
+  cursor: pointer; }
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -644,13 +597,6 @@ a {
 .widget_search .search-submit {
   display: none; }
 
-/*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-/* Posts and pages */
-/* Asides */
-/* Comments */
-/* Page Styles */
 .blog #content,
 .single-post #content,
 .category #content,
@@ -800,6 +746,18 @@ object {
 # Page Templates
 --------------------------------------------------------------*/
 /* Front page */
+.home-banner {
+  height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  background-image: linear-gradient(rgba(36, 36, 36, 0.3), rgba(36, 36, 36, 0.3)), url("../../images/home-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 /* Front page */
 .home h2 {
   text-align: center;
@@ -899,65 +857,54 @@ object {
       text-decoration: none; }
 
 /* Latest Adventure */
-.adventures ul {
-  list-style-type: none;
-  margin-left: 0;
-  padding-left: 0; }
-
 .adventures li {
-  float: left;
-  position: relative;
-  overflow: hidden; }
-
-.adventures .story-wrapper {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1; }
+  list-style-type: none;
+  margin-bottom: 10px; }
 
 .adventures li:first-child {
-  width: 540px;
-  height: 540px;
-  margin: 0; }
-  .adventures li:first-child img {
-    min-height: 640px; }
+  width: 550px;
+  height: 540px; }
 
 .adventures li:nth-child(2) {
-  width: 560px;
-  height: 250px;
-  margin: 0 0 20px 20px; }
+  width: 550px;
+  height: 250px; }
 
-.adventures li:nth-child(3) {
+.adventures li:nth-child(3),
+.adventures li:nth-child(4) {
   width: 270px;
-  height: 270px;
-  margin: 0 0 20px 20px; }
+  height: 280px; }
 
-.adventures li:last-child {
-  width: 270px;
-  height: 270px;
-  margin: 0 0 20px 20px; }
+.story-wrapper {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%; }
 
-.adventures .story-info {
+.story-wrapper:after {
+  background: rgba(0, 0, 0, 0.35);
+  content: "";
+  height: 100%;
+  left: 0;
   position: absolute;
   top: 0;
-  height: 100%;
-  padding: 3rem 1.5rem;
-  background-color: rgba(0, 0, 0, 0.4); }
+  width: 100%;
+  z-index: 1; }
 
-.adventures .img-adventure img {
+.story-info {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0; }
+  top: 20px;
+  left: 20px;
+  z-index: 999; }
 
-.adventures img {
-  position: absolute;
-  width: auto;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -90%); }
+.story-info h3 a {
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none; }
+
+.adventures ul {
+  margin: 0;
+  padding: 0; }
 
 .widget-area {
   width: 27%;
@@ -972,7 +919,7 @@ object {
 .widget-title h2 {
   margin-bottom: 0px; }
 
-.about-hero {
+.page-id-8 .about-hero {
   height: 100vh;
   display: -ms-flexbox;
   display: flex;
@@ -980,51 +927,19 @@ object {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center; }
-  .about-hero h1 {
-    font-size: 2.75rem;
-    color: white; }
+  .page-id-8 .about-hero h1 {
+    color: #FFF;
+    font-size: 3rem; }
 
-.about-wrap {
-  padding-top: 2.5rem;
-  margin: 0 auto;
-  width: 800px; }
-  .about-wrap h2 {
-    text-align: center; }
-
-/*--------------------------------------------------------------
-# Journal
---------------------------------------------------------------*/
-.blog article, .date article {
-  margin-bottom: 4.5rem; }
-
-.blog .entry-header, .single-post .entry-header, .category .entry-header, .date .entry-header {
-  font-family: "novacento", "arial", "sans-serif";
-  text-transform: uppercase;
-  line-height: 0;
-  position: relative;
-  color: white; }
-  .blog .entry-header img, .single-post .entry-header img, .category .entry-header img, .date .entry-header img {
-    width: 100%;
-    height: auto; }
-  .blog .entry-header h1, .blog .entry-header h2, .single-post .entry-header h1, .single-post .entry-header h2, .category .entry-header h1, .category .entry-header h2, .date .entry-header h1, .date .entry-header h2 {
-    color: white;
-    padding: .5rem 1.5rem;
-    line-height: 1.5;
-    position: absolute;
-    top: 35px;
-    width: 570px;
-    background-color: #248A83; }
-  .blog .entry-header a, .single-post .entry-header a, .category .entry-header a, .date .entry-header a {
-    color: white; }
-    .blog .entry-header a:hover, .single-post .entry-header a:hover, .category .entry-header a:hover, .date .entry-header a:hover {
-      color: #f0e4d1; }
-  .blog .entry-header .entry-meta, .single-post .entry-header .entry-meta, .category .entry-header .entry-meta, .date .entry-header .entry-meta {
-    line-height: 1.5;
-    padding: .3rem .5rem;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    background-color: #248A83; }
+.page-id-8 .about-content {
+  padding-top: 3rem;
+  margin: 0;
+  width: 800px;
+  margin: 3rem auto; }
+  .page-id-8 .about-content h2 {
+    text-align: center;
+    color: #2f1339;
+    font-size: 3rem; }
 
 /*--------------------------------------------------------------
 # Footer
@@ -1076,26 +991,23 @@ object {
 /*--------------------------------------------------------------
 # Single Product Page
 --------------------------------------------------------------*/
-.single-product .one-product {
+.single-product .product {
+  padding: 6rem 0;
   display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between; }
-
-.single-product .product-img {
-  width: 540px; }
-  .single-product .product-img img {
-    width: 100%;
-    height: auto; }
-
-.single-product .product-desc {
-  width: 540px; }
-  .single-product .product-desc h1 {
-    margin-bottom: .7rem; }
-  .single-product .product-desc h2 {
-    font-size: 1.8rem;
-    letter-spacing: .5px;
-    font-weight: normal; }
+  display: flex; }
+  .single-product .product .wp-post-image {
+    padding-right: 3rem; }
+  .single-product .product .product-info {
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%; }
+    .single-product .product .product-info h1 {
+      margin: 0 0 1rem 0;
+      font-size: 2.4rem; }
+    .single-product .product .product-info .price {
+      margin: 0 0 2rem 0;
+      font-size: 1.75rem; }
+    .single-product .product .product-info p {
+      line-height: 1.75rem; }
 
 /*--------------------------------------------------------------
 # Archive Product Page
@@ -1163,91 +1075,5 @@ object {
     overflow: hidden; }
 
 /*--------------------------------------------------------------
-# Adventure Archive
---------------------------------------------------------------*/
-.post-type-archive-adventure h1 {
-  text-align: center; }
-
-.adventure-grid ul {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 0;
-  margin-bottom: 1rem; }
-
-.adventure-grid li {
-  width: 550px;
-  height: 550px;
-  color: white;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 20px; }
-  .adventure-grid li .adventure-img {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0; }
-  .adventure-grid li img {
-    width: auto;
-    max-height: 630px;
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -90%); }
-  .adventure-grid li .headline {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    padding: 4rem 1.5rem;
-    background-color: rgba(0, 0, 0, 0.4); }
-  .adventure-grid li h2 {
-    font: 3rem "merriweather", serif;
-    text-transform: none;
-    margin-bottom: 4.5rem; }
-    .adventure-grid li h2 a {
-      color: white; }
-      .adventure-grid li h2 a:hover {
-        color: #f0e4d1; }
-
-.adventure-grid .white-link a {
-  color: white;
-  border: 1px solid white; }
-  .adventure-grid .white-link a:hover {
-    border-color: #248A83; }
-
-/*--------------------------------------------------------------
 # Search Page Results
 --------------------------------------------------------------*/
-.search-results h1 {
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
-  border-bottom: 1px solid #e1e1e1; }
-
-.search-results h2 a {
-  color: #248A83; }
-
-.search-results .entry-summary p {
-  margin-bottom: 2rem; }
-
-.search-results article {
-  margin-bottom: 5rem; }
-
-.search-results .search-pagination {
-  border-top: 1px solid #e1e1e1;
-  padding-top: 2rem; }
-  .search-results .search-pagination .current {
-    background-color: #404040; }
-
-.search-results .page-numbers {
-  color: #fff;
-  font-family: "novacento", "arial", "sans-serif";
-  text-transform: uppercase;
-  background-color: #248A83;
-  padding: .4rem .8rem;
-  cursor: pointer; }
-  .search-results .page-numbers:hover {
-    background-color: #404040; }

@@ -1,19 +1,27 @@
-.about-hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  h1 {
-    font-size: 2.75rem;
-    color:white;
-  }
-}
 
-.about-wrap {
-  padding-top: 2.5rem;
-  margin: 0 auto;
-  width: 800px;
-  h2 {
-    text-align: center;
+.page-id-8 {
+  .about-hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+      color: #FFF;
+      font-size: 3rem;
+    }
   }
+
+  .about-content {
+    padding-top: 3rem;
+    margin: 0;
+    width: 800px;
+    margin: 3rem auto;
+    h2 {
+      text-align: center;
+      color: #2f1339;
+      font-size: 3rem;
+    }
+  }
+
+  
 }

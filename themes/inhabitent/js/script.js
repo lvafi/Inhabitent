@@ -1,16 +1,24 @@
-(function($) {
-  console.log("working?")
-  //This will show/hide the search form in navigation!!
-  $(document).ready(function() {
-    $('.show-search').on('click', function(event){
-      event.preventDefault();
-      console.log('hello world');
-      $('#site-navigation input[type=search]').animate({width: 'toggle'}).focus();
-    });
+jQuery(document).ready(function($) {
 
-    //This will hide the search form when no longer in focus.
-    $('#site-navigation input[type=search]').on('focusout', function(){
-      $(this).animate({width: 'toggle'});
-    });
+  // latest adventure layout
+	$('.adventures ul').isotope({
+    itemSelector: '.adventures li',
+    masonry: {
+    gutter: 10,
+    columnWidth: 270
+    }
+	});
+  
+  // search toggle
+  $( ".show-search" ).click(function() {
+    $( ".search-field" ).toggle( "fold", 1000 );
   });
-})(jQuery);
+
+  // scroll menu bar
+  $(window).scroll(function(){
+    var scroll = $(window).scrollTop();
+    console.log(scroll);
+    
+  });
+  
+}); // end document ready

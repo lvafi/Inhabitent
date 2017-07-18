@@ -42,31 +42,34 @@ get_header(); ?>
 <section class="journal-feed container">
 <h2>Inhabitent Journal</h2>
 <ul>
-  <?php $news_args = array(
-    // 'order' => 'ASC',
-    'numberposts' => 3,
-    'post_type' => 'post',
-  );?>
-  <?php $journal_posts = get_posts( $news_args ); // returns an array of posts
-    foreach ( $journal_posts as $post ) : setup_postdata( $post );?>
-    <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );?>
-      <li> 
-        <div class="image-container" style="background-image: url('<?php echo $thumb['0'];?>')">
+  <?php 
+      $args = array( 
+        'post_type' => 'post', 
+        'orderby' => 'date', 
+        'order' => 'DESC',
+        'posts_per_page' => 3 
+    
+    ); $custom_query = new WP_Query( $args );
+                    
+    if($custom_query->have_posts()) : while($custom_query->have_posts()) : $custom_query->the_post(); ?> 
+      <li>
+       <div class="image-container" style="background-image: url('<?php if ( has_post_thumbnail() ) { the_post_thumbnail_url('full');  }   ?>')">
         </div>
         <div class="post-wrap">
         <p><?php echo get_the_time( "j F Y", $post->ID) ?>  / <?php echo $post->comment_count; ?> Comments  </p>
-        <a href="<?php echo $post->guid; ?>"> <h3><?php echo $post->post_title; ?></h3>  </a>
-        <p class="white-link"><a href="<?php echo $post->guid; ?>">  <span>Read Entry</span>  </a></p>
-        </div>
+        <a href="<?php the_permalink(); ?>"> <h3><?php the_title(); ?></h3>  </a>
+        <p class="white-link"><a href="<?php the_permalink(); ?>">  <span>Read Entry</span>  </a></p>
+        </div>   
       </li>
-    <?php endforeach; wp_reset_postdata();?>
+    <?php endwhile; endif; wp_reset_postdata(); ?>
+  
 </ul>    
 </section>   
 
 
 <section class="adventures container">
   <h2>Latest Adventures</h2>
-  <ul class="clearfix">
+  <ul>
    <?php 
       $args = array( 
         'post_type' => 'Adventures', 
@@ -78,14 +81,14 @@ get_header(); ?>
                     
     if($custom_query->have_posts()) : while($custom_query->have_posts()) : $custom_query->the_post(); ?> 
       <li>
-          <div class="img-adventure">
-          <img src="<?php if ( has_post_thumbnail() ) { the_post_thumbnail_url('full');  }   ?>">
-          </div>
+          <div class="story-wrapper" style="background-image: url('<?php if ( has_post_thumbnail() ) { the_post_thumbnail_url('full');  }   ?>')">
+          
+         
           <div class="story-info">
             <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
             <a class="white-btn" href="<?php the_permalink(); ?>">Read more</a>
           </div>
-       
+        </div>
       </li>
 
 
